@@ -12,9 +12,11 @@ export default function Home() {
 // So we are redirecting user from the base url '/' to '/test/jobs'.
 Home.getInitialProps = async (ctx: any) => {
   if (typeof window === "undefined") {
-    ctx.res.writeHead(302, { Location: "http://localhost:3000/test/jobs" });
+    ctx.res.writeHead(302, {
+      Location: "https://zippia-assignment.vercel.app/test/jobs",
+    });
     ctx.res.end();
   } else {
-    window.location.href = "http://localhost:3000/test/jobs";
+    window.location.href = "https://zippia-assignment.vercel.app/test/jobs";
   }
 };
