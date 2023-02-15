@@ -33,7 +33,11 @@ const Jobs = ({ jobs, isLoading }) => {
 
   // filtering data according to input text
   const changeHandler = (e) => {
-    setFilteredData(data.filter((job, index) => job.companyName.includes(e)));
+    setFilteredData(
+      data.filter((job, index) =>
+        job.companyName.toLowerCase().includes(e.toLowerCase())
+      )
+    );
   };
 
   if (isLoading) {
